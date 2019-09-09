@@ -1,0 +1,33 @@
+f = @(x) 3.7.*cos(1.5.*x).*exp(-4.*x./3) + 2.4.*sin(4.5.*x).*exp(2.*x./3) + 4;
+a = 1.8; b = 2.3;
+alfa = 0; betta = 3/5;
+m = 3;
+X = linspace(a, b, m);
+F = @(x) f(x)./(((x-a).^alfa).*((b-x).^betta));
+p = @(x) (((x-a).^alfa).*((b-x).^betta));
+mu0 = 5.*((b-a).^(2./5))./2;
+mu1 = 5.*b.*((b-a).^(2./5))./2 - 5.*((b-a).^(7./5))./7;
+mu2 = 5.*(b.^2).*((b-a).^(2./5))./2 - 10.*b.*((b-a).^(7./5))./7 + 5.*((b-a).^(12./5))./12;
+P = @(x) [p(x);
+          p(x).*x;
+          p(x).*x.^2;];
+    r = @(x) x.*x./p(x);
+muu0 = integral(r,a,b);
+%muu1 = integral(P(2),a,b);
+%muu2 = integral(P(3),a,b);
+
+Y = [(X(1)).^0 (X(2)).^0 (X(3)).^0;
+     (X(1)).^1 (X(2)).^1 (X(3)).^1;
+     (X(1)).^2 (X(2)).^2 (X(3)).^2;];
+M = [mu0;
+     mu1;
+     mu2;];
+ A = Y\M;
+ F1 = A(1).*f(X(1)) + A(2).*f(X(2)) + A(3).*f(X(3));
+ 
+    %hold on;
+    %grid on;
+    %axis([a,b,-4,3]);
+ %plot(X, F(X), 'LineWidth', 1.5,'Color',  'k');
+ % plot(X, F1(X), 'LineWidth', 1,'Color',  'b');
+ q = integral(F, a, b);
