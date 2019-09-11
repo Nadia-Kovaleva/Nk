@@ -1,0 +1,5 @@
+﻿  ConsoleApplication2.cpp
+ConsoleApplication2.cpp(59): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  AssemblyInfo.obj : /DEBUG:FASTLINK не поддерживается, если присутствует управляемый код; выполняется перезапуск компоновки с /DEBUG:FULL
+  ConsoleApplication2.vcxproj -> C:\MY\С++\ConsoleApplication2(перевод в СС)\Debug\ConsoleApplication2.exe
+  ConsoleApplication2.vcxproj -> C:\MY\С++\ConsoleApplication2(перевод в СС)\Debug\ConsoleApplication2.pdb (Partial PDB)

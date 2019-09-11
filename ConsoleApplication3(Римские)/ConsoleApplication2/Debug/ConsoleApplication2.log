@@ -1,0 +1,4 @@
+﻿  ConsoleApplication2.cpp
+  AssemblyInfo.obj : /DEBUG:FASTLINK не поддерживается, если присутствует управляемый код; выполняется перезапуск компоновки с /DEBUG:FULL
+  ConsoleApplication2.vcxproj -> C:\MY\С++\ConsoleApplication3(Римские)\Debug\ConsoleApplication2.exe
+  ConsoleApplication2.vcxproj -> C:\MY\С++\ConsoleApplication3(Римские)\Debug\ConsoleApplication2.pdb (Partial PDB)
